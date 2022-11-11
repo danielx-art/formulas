@@ -1,15 +1,190 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Section from "../layouts/Section.astro";
+const lang = "pt-br";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Formulário" lang={lang}>
+  <h1>Formulário</h1>
+  <div class="sections-container">
+    <Section title="Cinemática" lang={lang}>
+      <div class="subsection">
+        <div class="subsection-title"></div>
+        <div class="equation-list">
+          <div class="equation-container">
+            <div class="equation">
+              {"\\(V_M = \\frac{\\Delta S}{\\Delta t} t \\)"}
+            </div>
+            <div class="equation-name"></div>
+          </div>
+        </div>
+        <div class="subsection-title">M.U.</div>
+        <div class="equation-list">
+          <div class="equation-container">
+            <div class="equation">\(S = S_0 + V.\Delta t \)</div>
+            <div class="equation-name">Eq. Horária dos Espaços</div>
+          </div>
+        </div>
+        <div class="subsection-title">M.U.V</div>
+        <div class="equation-list">
+          <div class="equation-container">
+            <div class="equation">
+              {"\\(a = a_M = \\frac{\\Delta V}{\\Delta t} \\)"}
+            </div>
+            <div class="equation-name"></div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">\(V = V_0 + a\Delta t \)</div>
+            <div class="equation-name">Eq. Horária da Velocidade</div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">
+              {"\\(S = S_0 + V_0\\Delta t + \\frac{a}{2}\\Delta t^2 \\)"}
+            </div>
+            <div class="equation-name">Eq. Horária dos Espaços</div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">\( V^2 = V_0^2 + 2a\Delta S \)</div>
+            <div class="equation-name">Torricelli</div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">
+              {"\\(V_M = \\frac{\\Delta S}{\\Delta t} = \\frac{V + V_0}{2} \\)"}
+            </div>
+            <div class="equation-name">
+              "A velocidade média é a média das velocidades"
+            </div>
+          </div>
+        </div>
+        <div class="subsection-title">M.C.U</div>
+        <div class="equation-list">
+          <div class="equation-container">
+            <div class="equation">
+              {"\\(a = a_{cp} = \\frac{\\ V^2}{R}  \\)"}
+            </div>
+            <div class="equation-name">aceleração centrípeta</div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">período: \( T\)</div>
+            <div class="equation-name">
+              intervalo de tempo de um ciclo completo
+            </div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">{"\\( f = \\frac{1}{ T} \\)"}</div>
+            <div class="equation-name">frequência</div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">
+              {
+                "\\( V = \\frac{\\Delta S}{ \\Delta t} = \\frac{2 \\pi R}{T} = 2 \\pi R f\\)"
+              }
+            </div>
+            <div class="equation-name">velocidade (linear)</div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">
+              {
+                "\\(\\omega = \\frac{\\Delta \\phi}{\\Delta t} = \\frac{2 \\pi}{T} = 2 \\pi f \\)"
+              }
+            </div>
+            <div class="equation-name">frequência ou velocidade angular</div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">\( V = \omega R\)</div>
+            <div class="equation-name"></div>
+          </div>
+        </div>
+        <div class="subsection-title">M.H.S</div>
+        <div class="equation-list">
+          <div class="equation-container">
+            <div class="equation">\(x = A.\sin(\omega t - \phi_0) \)</div>
+            <div class="equation-name"></div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">
+              \(v = A\omega . \cos(\omega t - \phi_0) \)
+            </div>
+            <div class="equation-name"></div>
+          </div>
+          <div class="equation-container">
+            <div class="equation">
+              \(a = - A \omega ^2 . \sin(\omega t - \phi_0) \)
+            </div>
+          </div>
+        </div>
+      </div>
+      <Section title=" " lang={lang}>
+        <div class="subsection">
+          <div class="subsection-title"></div>
+          <div class="equation-container">
+            <div class="equation">{"\\(\\sqrt{2}\\)"}</div>
+            <div class="equation-name"></div>
+          </div>
+        </div>
+      </Section>
+      <Section title=" " lang={lang}>
+        <div class="subsection">
+          <div class="subsection-title"></div>
+          <div class="equation-container">
+            <div class="equation">{"\\(\\sqrt{2}\\)"}</div>
+            <div class="equation-name"></div>
+          </div>
+        </div>
+      </Section>
+    </Section>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 5.25vw;
+    text-align: center;
+    color: whitesmoke;
+    margin: 0 0 1.75vw 0;
+    padding-top: 1.75vw;
+    box-sizing: border-box;
+  }
+  .sections-container {
+    display: flex;
+    width: 100%;
+    height: 120vw;
+    gap: 1vw 1vw;
+    flex-flow: column wrap;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .subsection {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+  }
+  .subsection > * {
+    margin-top: 1.5vw;
+  }
+
+  .equation-list {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-bottom-right-radius: 5px;
+  }
+
+  .equation-container {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 2vw 1vw 1vw;
+  }
+
+  .equation {
+    padding-bottom: 0.2vw;
+  }
+
+  .equation-name {
+    align-self: flex-end;
+    font-style: italic;
+    font-size: 1.2vw;
+    padding-left: 1.2vw;
+    margin-left: auto;
+  }
+</style>

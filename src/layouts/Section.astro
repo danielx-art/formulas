@@ -1,0 +1,35 @@
+---
+export interface Props {
+  title: string;
+  lang: string;
+}
+
+const { title, lang } = Astro.props;
+---
+
+<div class="section-inner">
+  <h2>{title}</h2>
+  <slot />
+</div>
+
+<style>
+  .section-inner {
+    display: flex;
+    flex-flow: column nowrap;
+    box-sizing: border-box;
+    justify-content: center;
+    /* margin: 0.525vw; */
+    padding: 1.75vw 1.75vw 1.75vw 1.75vw;
+    width: calc(50% - 1vw);
+    background-color: whitesmoke;
+    border-radius: 5px;
+    color: rgb(24, 24, 24);
+  }
+  h2 {
+    margin: 0 0 0.875vw 0;
+    padding: 0;
+    font-size: 2.625vw;
+    line-height: 2.625vw;
+    color: rgb(24, 24, 24);
+  }
+</style>
