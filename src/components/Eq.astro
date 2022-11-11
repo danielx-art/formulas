@@ -1,0 +1,34 @@
+---
+export interface Props {
+  name?: string;
+  lang?: string;
+  priority?: number;
+}
+
+const { name = "", lang = "pt-br", priority = 1 } = Astro.props;
+---
+
+<div class="equation-container">
+  <div class="equation"><slot /></div>
+  <div class="equation-name">{name}</div>
+</div>
+
+<style>
+  .equation-container {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 2vw 1vw 1vw;
+  }
+
+  .equation {
+    padding-bottom: 0.2vw;
+  }
+
+  .equation-name {
+    align-self: flex-end;
+    font-style: italic;
+    font-size: 1.2vw;
+    padding-left: 1.2vw;
+    margin-left: auto;
+  }
+</style>

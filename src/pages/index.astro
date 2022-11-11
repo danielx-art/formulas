@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Section from "../layouts/Section.astro";
+import Section from "../components/Section.astro";
+import Sub from "../components/Sub.astro";
+import Eq from "../components/Eq.astro";
 const lang = "pt-br";
 ---
 
@@ -8,130 +10,117 @@ const lang = "pt-br";
   <h1>Formulário</h1>
   <div class="sections-container">
     <Section title="Cinemática" lang={lang}>
-      <div class="subsection">
-        <div class="subsection-title"></div>
-        <div class="equation-list">
-          <div class="equation-container">
-            <div class="equation">
-              {"\\(V_M = \\frac{\\Delta S}{\\Delta t} t \\)"}
-            </div>
-            <div class="equation-name"></div>
-          </div>
-        </div>
-        <div class="subsection-title">M.U.</div>
-        <div class="equation-list">
-          <div class="equation-container">
-            <div class="equation">\(S = S_0 + V.\Delta t \)</div>
-            <div class="equation-name">Eq. Horária dos Espaços</div>
-          </div>
-        </div>
-        <div class="subsection-title">M.U.V</div>
-        <div class="equation-list">
-          <div class="equation-container">
-            <div class="equation">
-              {"\\(a = a_M = \\frac{\\Delta V}{\\Delta t} \\)"}
-            </div>
-            <div class="equation-name"></div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">\(V = V_0 + a\Delta t \)</div>
-            <div class="equation-name">Eq. Horária da Velocidade</div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">
-              {"\\(S = S_0 + V_0\\Delta t + \\frac{a}{2}\\Delta t^2 \\)"}
-            </div>
-            <div class="equation-name">Eq. Horária dos Espaços</div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">\( V^2 = V_0^2 + 2a\Delta S \)</div>
-            <div class="equation-name">Torricelli</div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">
-              {"\\(V_M = \\frac{\\Delta S}{\\Delta t} = \\frac{V + V_0}{2} \\)"}
-            </div>
-            <div class="equation-name">
-              "A velocidade média é a média das velocidades"
-            </div>
-          </div>
-        </div>
-        <div class="subsection-title">M.C.U</div>
-        <div class="equation-list">
-          <div class="equation-container">
-            <div class="equation">
-              {"\\(a = a_{cp} = \\frac{\\ V^2}{R}  \\)"}
-            </div>
-            <div class="equation-name">aceleração centrípeta</div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">período: \( T\)</div>
-            <div class="equation-name">
-              intervalo de tempo de um ciclo completo
-            </div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">{"\\( f = \\frac{1}{ T} \\)"}</div>
-            <div class="equation-name">frequência</div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">
-              {
-                "\\( V = \\frac{\\Delta S}{ \\Delta t} = \\frac{2 \\pi R}{T} = 2 \\pi R f\\)"
-              }
-            </div>
-            <div class="equation-name">velocidade (linear)</div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">
-              {
-                "\\(\\omega = \\frac{\\Delta \\phi}{\\Delta t} = \\frac{2 \\pi}{T} = 2 \\pi f \\)"
-              }
-            </div>
-            <div class="equation-name">frequência ou velocidade angular</div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">\( V = \omega R\)</div>
-            <div class="equation-name"></div>
-          </div>
-        </div>
-        <div class="subsection-title">M.H.S</div>
-        <div class="equation-list">
-          <div class="equation-container">
-            <div class="equation">\(x = A.\sin(\omega t - \phi_0) \)</div>
-            <div class="equation-name"></div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">
-              \(v = A\omega . \cos(\omega t - \phi_0) \)
-            </div>
-            <div class="equation-name"></div>
-          </div>
-          <div class="equation-container">
-            <div class="equation">
-              \(a = - A \omega ^2 . \sin(\omega t - \phi_0) \)
-            </div>
-          </div>
-        </div>
-      </div>
-      <Section title=" " lang={lang}>
-        <div class="subsection">
-          <div class="subsection-title"></div>
-          <div class="equation-container">
-            <div class="equation">{"\\(\\sqrt{2}\\)"}</div>
-            <div class="equation-name"></div>
-          </div>
-        </div>
-      </Section>
-      <Section title=" " lang={lang}>
-        <div class="subsection">
-          <div class="subsection-title"></div>
-          <div class="equation-container">
-            <div class="equation">{"\\(\\sqrt{2}\\)"}</div>
-            <div class="equation-name"></div>
-          </div>
-        </div>
-      </Section>
+      <Sub>
+        <Eq>
+          {"\\(V_M = \\frac{\\Delta S}{\\Delta t} t \\)"}
+        </Eq>
+      </Sub>
+      <Sub title="M.U.">
+        <Eq name="Eq. Horária dos Espaços">\(S = S_0 + V.\Delta t \)</Eq>
+      </Sub>
+      <Sub title="M.U.V.">
+        <Eq>
+          {"\\(a = a_M = \\frac{\\Delta V}{\\Delta t} \\)"}
+        </Eq>
+        <Eq name="Eq. Horária da Velocidade">\(V = V_0 + a\Delta t \)</Eq>
+
+        <Eq name="Eq. Horária dos Espaços">
+          {"\\(S = S_0 + V_0\\Delta t + \\frac{a}{2}\\Delta t^2 \\)"}
+        </Eq>
+        <Eq name="Torricelli">\( V^2 = V_0^2 + 2a\Delta S \)</Eq>
+        <Eq name="A velocidade média é a média das velocidades">
+          {"\\(V_M = \\frac{\\Delta S}{\\Delta t} = \\frac{V + V_0}{2} \\)"}
+        </Eq>
+      </Sub>
+      <Sub title={"M.C.U"}>
+        <Eq name="aceleração centrípeta">
+          {"\\(a = a_{cp} = \\frac{\\ V^2}{R}  \\)"}
+        </Eq>
+        <Eq name="intervalo de tempo de um ciclo">período: \( T\)</Eq>
+        <Eq name="frequência">
+          {"\\( f = \\frac{1}{ T} \\)"}
+        </Eq>
+        <Eq name="velocidade (linear)">
+          {
+            "\\( V = \\frac{\\Delta S}{ \\Delta t} = \\frac{2 \\pi R}{T} = 2 \\pi R f\\)"
+          }
+        </Eq>
+        <Eq name="frequência ou velocidade angular">
+          {
+            "\\(\\omega = \\frac{\\Delta \\phi}{\\Delta t} = \\frac{2 \\pi}{T} = 2 \\pi f \\)"
+          }
+        </Eq>
+      </Sub>
+      <Sub title={"M.H.S."}>
+        <Eq>\(x = A.\sin(\omega t - \phi_0) \)</Eq>
+        <Eq>\(v = A\omega . \cos(\omega t - \phi_0) \)</Eq>
+        <Eq>\(a = - A \omega ^2 . \sin(\omega t - \phi_0) \)</Eq>
+      </Sub>
+    </Section>
+    <Section title="Estática / Dinâmica">
+      <Sub title={"Leis de Newton"}>
+        <Eq>
+          {
+            "\\( \\vec{v} = \\text{constante} \\Rightarrow \\vec{a} = \\vec{0} \\Rightarrow \\vec{F_{res}} = \\vec{0}  \\)"
+          }
+        </Eq>
+        <Eq>
+          {"\\( \\vec{F_{res}} = m \\vec{a}  \\)"}
+        </Eq>
+        <Eq>
+          {"\\( \\vec{F_{A,B}} = - \\vec{F_{B,A}}  \\)"}
+        </Eq>
+      </Sub>
+      <Sub>
+        <Eq>
+          {"\\( E = \\frac{mv^2}{2} \\)"}
+        </Eq>
+        <Eq>
+          {
+            "\\( E_\\text{mecânica} = E_\\text{cinética} + \\sum  E_\\text{potenciais} \\)"
+          }
+        </Eq>
+      </Sub>
+      <Sub title={"Molas"}>
+        <Eq>
+          {"\\( F_{el} = - kx \\)"}
+        </Eq>
+        <Eq name="en. potencial elástica">
+          {"\\( E_{el} = \\frac{kx^2}{2} \\)"}
+        </Eq>
+      </Sub>
+      <Sub title={"Atrito"}>
+        <Eq>
+          {
+            "\\( \\mu_\\text{estático} \\geq  \\mu_\\text{cinético ou dinâmico}  \\)"
+          }
+        </Eq>
+        <Eq name="estático máximo / cinético ou dinâmico">
+          {"\\( F_\\text{at} = F_N \\space \\mu \\)"}
+        </Eq>
+      </Sub>
+      <Sub title={"Trabalho"}>
+        <Eq name="trabalho da força resultante">
+          {"\\( \\tau_{res} = \\Delta E_{cin} \\)"}
+        </Eq>
+        <Eq name="trabalho de uma força qualquer">
+          {"\\( \\tau = Fd \\cos(\\theta) \\)"}
+        </Eq>
+      </Sub>
+    </Section>
+    <Section title="Gravitação (Newton)">
+      <Sub>
+        <Eq name="Lei da Gravitação Universal">
+          {"\\( F = \\frac{GMm}{d^2} \\)"} &nbsp , &nbsp &nbsp
+          {"\\( g = \\frac{GM}{d^2} \\)"}
+        </Eq>
+        <Eq name="peso">
+          {"\\( F = P = mg \\)"}
+        </Eq>
+        <Eq name="en. potencial gravitacional">
+          {"\\( E = mgh \\)"}
+        </Eq>
+      </Sub>
     </Section>
   </div>
 </Layout>
@@ -153,38 +142,5 @@ const lang = "pt-br";
     flex-flow: column wrap;
     box-sizing: border-box;
     overflow: hidden;
-  }
-
-  .subsection {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr;
-  }
-  .subsection > * {
-    margin-top: 1.5vw;
-  }
-
-  .equation-list {
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    border-bottom-right-radius: 5px;
-  }
-
-  .equation-container {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 0 2vw 1vw 1vw;
-  }
-
-  .equation {
-    padding-bottom: 0.2vw;
-  }
-
-  .equation-name {
-    align-self: flex-end;
-    font-style: italic;
-    font-size: 1.2vw;
-    padding-left: 1.2vw;
-    margin-left: auto;
   }
 </style>

@@ -1,0 +1,33 @@
+---
+export interface Props {
+  title?: string;
+  lang?: string;
+  priority?: number;
+}
+
+const { title = "", lang = "pt-br", priority = 1 } = Astro.props;
+---
+
+<div class="subsection">
+  <div class="subsection-title">{title}</div>
+  <div class="equation-list">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .subsection {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+  }
+  .subsection > * {
+    margin-top: 1.5vw;
+  }
+
+  .equation-list {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-bottom-right-radius: 5px;
+  }
+</style>
